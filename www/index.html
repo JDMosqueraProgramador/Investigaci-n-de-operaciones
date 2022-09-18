@@ -13,9 +13,11 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+
+
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="text-white bg-dark navbar-brand" href="#">Investigación de operaciones</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,18 +25,162 @@
             <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class=" text-white bg-dark nav-link active" aria-current="page" href="#">Decisiones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class=" text-white bg-dark nav-link" href="#">Juegos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="text-white bg-dark nav-link" href="#">Colas</a>
                     </li>
                 </ul>
+
             </div>
+            <span class="text-white bg-dark navbar-text">
+                Disfruta del proceso
+            </span>
         </div>
     </nav>
+
+    <div>
+        <h2 class="mb-1 p-4 d-flex justify-content-center">Toma de decisiones</h2>
+        <h7 class="d-flex justify-content-center">Para empezar debera proporcionarnos la siguiente información,
+            dependiendo de la información proporcionada se le dara un resultado.</h7>
+    </div>
+
+
+
+    <form class="container" id="dateform1">
+
+        <div class="row">
+            <div class="col-6">
+                <h6 class="mb-1 p-5 "> 1) Por favor ingrese la matriz, recuerde, fila para estado de naturaleza, columna
+                    para
+                    decisiones:</h6>
+
+
+                <div class="row text-center">
+                    <div class="col-1">
+
+                    </div>
+                    <div class="col-5">
+                        <h6>S1</h6>
+                    </div>
+                    <div class="col-5">
+                        <h6>S2</h6>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-1">
+                        D1
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s1">
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        D2
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s1">
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        D3
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s1">
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <h6 class="mb-1 p-5 "> 2) Por favor ingrese las probabilidades para s1 y s2, recuerde que la suma de
+                    estas debe ser uno:</h6>
+
+
+                <div class="row text-center">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-5 ">
+                        <h6>P --- s1</h6>
+                    </div>
+                    <div class="col-5">
+                        <h6>P --- s2</h6>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0.0" name="p-s1">
+                    </div>
+                    <div class="col-5">
+                        <input type="number" class="form-control" placeholder="0.0" name="p-s2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <h6 class="mb-1 p-5 d-flex justify-content-center"> 3) Ingrese los historicos o probabilidades posteriores del problema:
+            </h6>
+
+            <div class="row text-center justify-content-center">
+                <div class="col-1">
+                    Pf/s1
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" placeholder="0" name="pf-s1">
+                </div>
+
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-1">
+                    Pf/s2
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" placeholder="0" name=" pf-s2">
+                </div>
+
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-1">
+                    Pu/s1
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" placeholder="0" name="pu-s1">
+                </div>
+
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-1">
+                    Pu/s2
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" placeholder="0" name="pu-s2">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="mb-1 p-2 btn btn-outline-success m-auto">Enviar</button>
+        
+    </form>
+
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
