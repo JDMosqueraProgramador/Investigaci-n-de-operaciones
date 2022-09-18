@@ -1,16 +1,7 @@
 from . import functions as decisions
 import numpy as np
 
-d1 = np.array([120, 0])
-d2 = np.array([90, 60])
-d3 = np.array([150, -20])
-
-alternatives = np.array([d1, d2, d3])
-probabilities = np.array([0.78, 0.22])
-
-dependsProbabilities = np.array([[0.60, 0.40], [0.20, 0.80]])
-
-# from objects import ( alternatives, probabilities )
+from objects import ( alternatives, probabilities, dependsProbabilities )
 
 opt = decisions.optimist(alternatives)
 cons = decisions.conservative(alternatives)
