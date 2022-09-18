@@ -42,18 +42,19 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
 
         fetch('http://127.0.0.1:8000/decisions', {
-            body: JSON.stringify(data),
-            method: 'POST',
+            method: 'POST', // or 'PUT'
             headers: {
-                'Access-Control-Allow-Origin': 'http://localhost:3000',
-                'Access-Control-Allow-Credentials': 'true',
                 'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-        .catch(error => console.log('Error: ', error))
-        .then(response => {
-            console.log(response)
+            },
+            body: JSON.stringify(data),
         })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     })
 
 

@@ -1,6 +1,7 @@
 from . import functions as decisions
 import numpy as np
 
+
 def get_teory(alternatives, probabilities, dependsProbabilities):
 
     opt = decisions.optimist(alternatives)
