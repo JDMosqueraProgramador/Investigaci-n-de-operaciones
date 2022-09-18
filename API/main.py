@@ -1,6 +1,5 @@
-from typing import Union
 from fastapi import FastAPI
-from objects.data import (setData, surround_in_array)
+from objects.data import (surround_in_array)
 from modules import decisions
 from fastapi.middleware.cors import CORSMiddleware
 from objects.body import Body
