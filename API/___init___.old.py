@@ -19,11 +19,11 @@ ax_one = plt.subplot(2, 2, 1)
 assing_axis(ax_one)
 
 ax_one.table(
-        cellText=decisions.alternatives,
-        colLabels=column_labels,
-        rowLabels=row_labels,
-        loc="center",
-    )
+    cellText=decisions.alternatives,
+    colLabels=column_labels,
+    rowLabels=row_labels,
+    loc="center",
+)
 
 plt.title("Probabilidad de ganar al apostar al Real Madrid")
 
@@ -50,7 +50,6 @@ ax_three.table(
 )
 
 plt.title("Probabilidad de ganar al apostar al Real Madrid")
-
 
 
 plt.show()
