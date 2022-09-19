@@ -40,7 +40,7 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
 
 
     return {
-        "optmista": opt.tolist(),
+        "optimista": opt.tolist(),
         "conservador": cons.tolist(),
         "maximo_arrepentimiento" : max_regret.tolist(),
         "evidencias": evidences.tolist(),

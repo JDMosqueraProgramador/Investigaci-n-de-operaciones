@@ -1,3 +1,5 @@
+const getByID = (id) => document.querySelector(`#${id}`);
+
 document.addEventListener("DOMContentLoaded", (e) => {
     "estrict mode"
 
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
 
         fetch('http://127.0.0.1:8000/decisions', {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -50,13 +52,58 @@ document.addEventListener("DOMContentLoaded", (e) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log('Success:', data);
+                addTrWithData(data.optimista, data.conservador);
+                interactTr(data.maximo_arrepentimiento, 'max-regret', false);
+                interactTr(data.evidencias, 'evidences');
+                interactTr(data.evidencias_maximo_arrepentimiento, 'evidences-max');
+
+                getByID('awaited-value').innerHTML = data.ve;
+                getByID('aditional-awaited-value').innerHTML = data.vea;
+                getByID('awaited-value-max').innerHTML = data.vea_maximo_arrepentimiento;
+                getByID('prob-success').innerHTML = data.probabilidad_favorable;
+                getByID('prob-fail').innerHTML = data.probabilidad_desfavorable;
+
+                let ocurrence = data.probabilidad_ocurrencia.map((prob, i) => {
+                    let number = (i < 2) ? '1' : '2';
+                    let letter = (i % 2 == 0) ? 'f' : 'u';
+
+                    return [`Ps${number}/${letter}`, prob]
+                })
+
+                interactTr(ocurrence, 'prob-ocurrence', false);
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
     })
 
-
-
 })
+
+const createElement = (element) => document.createElement(element);
+const addNode = (element, node) => element.appendChild(node);
+
+const addTrWithData = (dataOne, dataTwo) => {
+    for (let i = 0; i < dataOne.length; i++) {
+        createTrAndTd([dataOne[i], dataTwo[i]], 'optmist-and-conservative')
+    }
+}
+
+const createTrAndTd = (data, id) => {
+    let tr = createElement('tr');
+
+    data.forEach(data => {
+        let td = createElement('td');
+        td.innerHTML = data;
+
+        addNode(tr, td);
+    })
+
+    addNode(document.querySelector("#" + id), tr)
+}
+
+const interactTr = (source, id, dataInArray = true) => {
+    source.forEach(data => {
+        createTrAndTd((dataInArray ? [data] : data), id)
+    })
+}
+

@@ -14,14 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    return { "Hello": "World" }
-
 @app.post("/decisions")
 def get_decision(body: Body):
-
-    print(body.dict())
     results = decisions.get_teory(
             alternatives=surround_in_array(body.dict()["matrix"]),
             probabilities=surround_in_array(body.dict()["probabilities"]),
