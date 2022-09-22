@@ -38,6 +38,8 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
 
     efficiency = abs(veod - awaited_value) / vea 
 
+    ive = veod-evidences.max()
+
 
     return {
         "optimista": opt.tolist(),
@@ -45,7 +47,7 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
         "maximo_arrepentimiento" : max_regret.tolist(),
         "evidencias": evidences.tolist(),
         "evidencias_maximo_arrepentimiento": evidences_with_max_regret.tolist(),
-        "ve": awaited_value,
+        "ve": evidences.max(),
         "vea": vea,
         "vea_maximo_arrepentimiento": evidences_with_max_regret.min(),
         "probabilidad_favorable": probability_success,
@@ -54,5 +56,6 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
         "evidencia_favorable": evidence_with_success_percent.tolist(),
         "evidencia_desfavorable": evidence_with_fail_percent.tolist(),
         "veod": veod,
-        "eficiencia": efficiency
+        "eficiencia": efficiency,
+        "incrento_valor_esperado":ive
     }

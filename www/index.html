@@ -69,10 +69,10 @@
                         D1
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d1-s1" value="250">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s1" value="8">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d1-s2" value="0">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s2" value="7">
                     </div>
                 </div>
                 <div class="row">
@@ -80,10 +80,10 @@
                         D2
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d2-s1" value="170">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s1" value="14">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d2-s2" value="120">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s2" value="5">
                     </div>
                 </div>
                 <div class="row">
@@ -91,10 +91,10 @@
                         D3
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d3-s1" value="150">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s1" value="20">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d3-s2" value="160">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s2" value="-9">
                     </div>
                 </div>
             </div>
@@ -119,11 +119,11 @@
                     </div>
                     <div class="col-5">
                         <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control"
-                            placeholder="0.0" name="p-s1" value="0.9">
+                            placeholder="0.0" name="p-s1" value="0.8">
                     </div>
                     <div class="col-5">
                         <input type="text" inputmode="numeric" pattern="\d+\.?\d*" type="number" class="form-control"
-                            placeholder="0.0" name="p-s2" value="0.1">
+                            placeholder="0.0" name="p-s2" value="0.2">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pf-s1" value="0.7">
+                        name="pf-s1" value="0.9">
                 </div>
 
             </div>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pu-s1" value="0.3">
+                        name="pu-s1" value="0.1">
                 </div>
 
             </div>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pf-s2" value="0.6">
+                        name="pf-s2" value="0.25">
                 </div>
 
             </div>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pu-s2" value="0.4">
+                        name="pu-s2" value="0.75">
                 </div>
             </div>
         </div>
@@ -293,9 +293,12 @@
             <div class="d-flex justify-content-center mt-5">
                 <h6>Valor esperado estrategico de optima decisión (VEOD) : </h6>
                 <p class="px-2 lh-sm" id="veod-result"></p>
-                <!-- <p class="mx-4 lh-sm">||</p>
-                <h6>Probabilidad de que sea desfavorable: </h6>
-                <p class="px-2 lh-sm" id="prob-fail"></p> -->
+                <p class="mx-4 lh-sm">||</p>
+                <h6>Incremento del valor esperado basado en inferecia muestral: </h6>
+                <p class="px-2 lh-sm" id="ive-result"></p>
+                <p class="mx-4 lh-sm">||</p>
+                <h6>Eficiencia del mercado: </h6>
+                <p class="px-2 lh-sm" id="eficiencia-result"></p>
             </div>
 
     </div>

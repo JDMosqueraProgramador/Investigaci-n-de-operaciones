@@ -58,18 +58,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 interactTr(data.evidencias, 'evidences');
                 interactTr(data.evidencias_maximo_arrepentimiento, 'evidences-max');
 
-                getByID('awaited-value').innerHTML = data.ve;
-                getByID('aditional-awaited-value').innerHTML = data.vea;
-                getByID('awaited-value-max').innerHTML = data.vea_maximo_arrepentimiento;
-                getByID('prob-success').innerHTML = data.probabilidad_favorable;
-                getByID('prob-fail').innerHTML = data.probabilidad_desfavorable;
-                getByID('veod-result').innerHTML = data.veod;
+                getByID('awaited-value').innerHTML = data.ve.toFixed(2);
+                getByID('aditional-awaited-value').innerHTML = data.vea.toFixed(2);
+                getByID('awaited-value-max').innerHTML = data.vea_maximo_arrepentimiento.toFixed(2);
+                getByID('prob-success').innerHTML = data.probabilidad_favorable.toFixed(2);
+                getByID('prob-fail').innerHTML = data.probabilidad_desfavorable.toFixed(2);
+                getByID('veod-result').innerHTML = data.veod.toFixed(2);
+                getByID('ive-result').innerHTML = data.incrento_valor_esperado.toFixed(3);
+                getByID('eficiencia-result').innerHTML  =data.eficiencia.toFixed(3) * 100 + "%";
 
                 let ocurrence = data.probabilidad_ocurrencia.map((prob, i) => {
-                    let number = (i < 2) ? '1' : '2';
+                    let number = (i < 2 ==1) ? '1' : '2';
                     let letter = (i % 2 == 0) ? 'f' : 'u';
 
-                    return [`Ps${number}/${letter}`, prob]
+                    return [`Ps${number}/${letter}`, prob.toFixed(4)]
                 })
 
                 interactTr(ocurrence, 'prob-ocurrence', false);
@@ -107,6 +109,6 @@ const createTrAndTd = (data, id) => {
 
 const interactTr = (source, id, dataInArray = true) => {
     source.forEach(data => {
-        createTrAndTd((dataInArray ? [data] : data), id)
+        createTrAndTd((dataInArray ? [data.toFixed(2)] : data), id)
     })
 }
