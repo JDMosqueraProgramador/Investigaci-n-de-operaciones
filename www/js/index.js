@@ -1,3 +1,4 @@
+
 const getByID = (id) => document.querySelector(`#${id}`);
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 getByID('prob-success').innerHTML = data.probabilidad_favorable;
                 getByID('prob-fail').innerHTML = data.probabilidad_desfavorable;
 
+
                 let ocurrence = data.probabilidad_ocurrencia.map((prob, i) => {
                     let number = (i < 2) ? '1' : '2';
                     let letter = (i % 2 == 0) ? 'f' : 'u';
@@ -71,6 +73,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 })
 
                 interactTr(ocurrence, 'prob-ocurrence', false);
+                
+                drawTree(data);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -106,4 +110,3 @@ const interactTr = (source, id, dataInArray = true) => {
         createTrAndTd((dataInArray ? [data] : data), id)
     })
 }
-
