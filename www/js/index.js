@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 getByID('awaited-value-max').innerHTML = data.vea_maximo_arrepentimiento;
                 getByID('prob-success').innerHTML = data.probabilidad_favorable;
                 getByID('prob-fail').innerHTML = data.probabilidad_desfavorable;
-
+                getByID('veod-result').innerHTML = data.veod;
 
                 let ocurrence = data.probabilidad_ocurrencia.map((prob, i) => {
                     let number = (i < 2) ? '1' : '2';
