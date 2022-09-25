@@ -40,6 +40,14 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
 
     ive = veod-evidences.max()
 
+    # GRAPHICS --------------------------------------------------------------------------------------
+
+    chart_points = []
+
+    for alt in alternatives:
+        chart_points.append(decisions.get_point(alt[0], alt[1]))
+        
+    print(chart_points)
 
     return {
         "optimista": opt.tolist(),
@@ -57,5 +65,6 @@ def get_teory(alternatives, probabilities, dependsProbabilities):
         "evidencia_desfavorable": evidence_with_fail_percent.tolist(),
         "veod": veod,
         "eficiencia": efficiency,
-        "incrento_valor_esperado":ive
+        "incrento_valor_esperado":ive,
+        "puntos": chart_points
     }
