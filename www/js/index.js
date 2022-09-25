@@ -55,8 +55,29 @@ document.addEventListener("DOMContentLoaded", (e) => {
             .then((data) => {
                 addTrWithData(data.optimista, data.conservador);
                 interactTr(data.maximo_arrepentimiento, 'max-regret', false);
-                interactTr(data.evidencias, 'evidences');
-                interactTr(data.evidencias_maximo_arrepentimiento, 'evidences-max');
+                interactTr(data.evidencias.map((evidence, i) => {
+                    return [
+                        getEquation(
+                            parseFloat(formData.get('p-s1')),
+                            parseFloat(formData.get('p-s2')),
+                            matrix[i][0],
+                            matrix[i][1]
+                        ),
+                        evidence
+                    ]
+                }), 'evidences', false);
+
+                interactTr(data.evidencias_maximo_arrepentimiento.map((evidence, i) => {
+                    return [
+                        getEquation(
+                            parseFloat(formData.get('p-s1')),
+                            parseFloat(formData.get('p-s2')),
+                            data.maximo_arrepentimiento[i][0],
+                            data.maximo_arrepentimiento[i][1]
+                        ),
+                        evidence
+                    ]
+                }), 'evidences-max', false);
 
                 getByID('awaited-value').innerHTML = data.ve.toFixed(2);
                 getByID('aditional-awaited-value').innerHTML = data.vea.toFixed(2);
@@ -65,17 +86,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 getByID('prob-fail').innerHTML = data.probabilidad_desfavorable.toFixed(2);
                 getByID('veod-result').innerHTML = data.veod.toFixed(2);
                 getByID('ive-result').innerHTML = data.incrento_valor_esperado.toFixed(3);
-                getByID('eficiencia-result').innerHTML  =data.eficiencia.toFixed(3) * 100 + "%";
+                getByID('eficiencia-result').innerHTML = data.eficiencia.toFixed(3) * 100 + "%";
 
                 let ocurrence = data.probabilidad_ocurrencia.map((prob, i) => {
-                    let number = (i < 2 ==1) ? '1' : '2';
+                    let number = (i < 2 == 1) ? '1' : '2';
                     let letter = (i % 2 == 0) ? 'f' : 'u';
 
                     return [`Ps${number}/${letter}`, prob.toFixed(4)]
                 })
 
                 interactTr(ocurrence, 'prob-ocurrence', false);
-                
+
                 drawTree(data);
             })
             .catch((error) => {
@@ -99,7 +120,7 @@ const createTrAndTd = (data, id) => {
 
     data.forEach(data => {
         let td = createElement('td');
-        td.innerHTML = data;
+        td.innerHTML = isNum(data) ? parseFloat(data).toFixed(2) : data;
 
         addNode(tr, td);
     })
@@ -109,6 +130,14 @@ const createTrAndTd = (data, id) => {
 
 const interactTr = (source, id, dataInArray = true) => {
     source.forEach(data => {
-        createTrAndTd((dataInArray ? [data.toFixed(2)] : data), id)
+        createTrAndTd((dataInArray ? [data] : data), id)
     })
+}
+
+const getEquation = (probSuccess, probFail, altSuccess, altFail) => {
+    return `(${probSuccess}) * (${altSuccess}) + (${probFail}) * (${altFail})`;
+}
+
+const isNum = (val) => {
+    return !isNaN(val)
 }
