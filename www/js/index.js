@@ -1,4 +1,3 @@
-
 const getByID = (id) => document.querySelector(`#${id}`);
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -96,7 +95,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 })
 
                 interactTr(ocurrence, 'prob-ocurrence', false);
-
+                
+                console.log(data.puntos);
+                createChart(data.puntos);
                 drawTree(data);
             })
             .catch((error) => {

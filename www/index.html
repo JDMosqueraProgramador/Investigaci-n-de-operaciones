@@ -275,6 +275,11 @@
             <p class="px-2 lh-sm" id="prob-fail"></p>
         </div>
 
+        <div class="my-5" width="500" height="500">
+            <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+
+
         <div class="row">
             <div class="col-6">
                 <table class="table table-bordered">
@@ -297,20 +302,20 @@
         <div class="row">
             <div id="myDiagramDiv" style="height:800px; background-color: #DAE4E4;"></div>
         </div>
-        
-            <div class="d-flex justify-content-center mt-5">
-                <h6>Valor esperado estrategico de optima decisión (VEOD) : </h6>
-                <p class="px-2 lh-sm" id="veod-result"></p>
-                <p class="mx-4 lh-sm">||</p>
-                <h6>Incremento del valor esperado basado en inferecia muestral: </h6>
-                <p class="px-2 lh-sm" id="ive-result"></p>
-                <p class="mx-4 lh-sm">||</p>
-                <h6>Eficiencia del mercado: </h6>
-                <p class="px-2 lh-sm" id="eficiencia-result"></p>
-            </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <h6>Valor esperado estrategico de optima decisión (VEOD) : </h6>
+            <p class="px-2 lh-sm" id="veod-result"></p>
+            <p class="mx-4 lh-sm">||</p>
+            <h6>Incremento del valor esperado basado en inferecia muestral: </h6>
+            <p class="px-2 lh-sm" id="ive-result"></p>
+            <p class="mx-4 lh-sm">||</p>
+            <h6>Eficiencia del mercado: </h6>
+            <p class="px-2 lh-sm" id="eficiencia-result"></p>
+        </div>
 
     </div>
-        
+
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -318,8 +323,11 @@
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
-    <script  src="js/trees.js" ></script>
-    <script  src="./js/index.js"></script>
+    <script src="js/trees.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
