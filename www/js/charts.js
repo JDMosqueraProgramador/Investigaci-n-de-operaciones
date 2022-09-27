@@ -69,7 +69,7 @@ const createChart = (data) => {
         datasets: newData.map((line, i) => ({
             label: "Linea " + (i + 1),
             data: line,
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: colors[i],
             borderColor: colors[i],
             borderWidth: 1,
             pointBackgroundColor: colors[i],
