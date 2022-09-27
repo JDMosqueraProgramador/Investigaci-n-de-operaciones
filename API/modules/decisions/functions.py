@@ -61,3 +61,10 @@ def interact_and_concat(arr, transform):
         new_arr = np.concatenate((new_arr, np.array([transform(arr=arr, element=element)])))
     
     return new_arr
+
+
+def get_point(s1, s2):
+    return [
+        [0, (s1 * 0 + s2 * (1 - 0))], 
+        [1, (s1 * 1 + s2 * (1 - 1))]
+    ]
