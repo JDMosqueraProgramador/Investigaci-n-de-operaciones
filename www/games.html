@@ -40,10 +40,30 @@
 
     <h2 class="mb-1 p-4 d-flex justify-content-center">Teoría de juegos</h2>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label" for="matrix-shape">Cantidad de filas y columnas para los estados: <span class="fw-bold" id="label-shape">3</span></label>
+                    <div class="d-flex">
+                        <span class="me-2">2</span>
+                        <input value="3" max="10" type="range" min="2" class="form-range" id="matrix-shape">
+                        <span class="ms-2">10</span>
+                    </div>
+                </div>
+                <div id="matrix"></div>
+                <button class="btn btn-success" id="calculate">Calcular alternativas</button>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
+
+    <script src="./js/games.js"></script>
 </body>
 
 </html>

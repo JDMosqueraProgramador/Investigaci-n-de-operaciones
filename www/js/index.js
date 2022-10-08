@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 })
 
-const createElement = (element) => document.createElement(element);
+export const createElement = (element) => document.createElement(element);
 const addNode = (element, node) => element.appendChild(node);
 
 const addTrWithData = (dataOne, dataTwo) => {
