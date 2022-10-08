@@ -69,10 +69,10 @@
                         D1
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d1-s1" value="8">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s1" value="">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d1-s2" value="7">
+                        <input type="number" class="form-control" placeholder="0" name="d1-s2" value="">
                     </div>
                 </div>
                 <div class="row">
@@ -80,10 +80,10 @@
                         D2
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d2-s1" value="14">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s1" value="">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d2-s2" value="5">
+                        <input type="number" class="form-control" placeholder="0" name="d2-s2" value="">
                     </div>
                 </div>
                 <div class="row">
@@ -91,16 +91,16 @@
                         D3
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d3-s1" value="20">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s1" value="">
                     </div>
                     <div class="col-5">
-                        <input type="number" class="form-control" placeholder="0" name="d3-s2" value="-9">
+                        <input type="number" class="form-control" placeholder="0" name="d3-s2" value="">
                     </div>
                 </div>
             </div>
 
             <div class="col-6">
-                <h6 class="mb-1 p-5 "> 2) Por favor ingrese las probabilidades para s1 y s2, recuerde que la de estas
+                <h6 class="mb-1 p-5 "> 2) Por favor ingrese las probabilidades previas para s1 y s2, recuerde que la de estas
                     debe ser uno:</h6>
 
                 <div class="row text-center">
@@ -119,11 +119,11 @@
                     </div>
                     <div class="col-5">
                         <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control"
-                            placeholder="0.0" name="p-s1" value="0.8">
+                            placeholder="0.0" name="p-s1" value="">
                     </div>
                     <div class="col-5">
                         <input type="text" inputmode="numeric" pattern="\d+\.?\d*" type="number" class="form-control"
-                            placeholder="0.0" name="p-s2" value="0.2">
+                            placeholder="0.0" name="p-s2" value="">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pf-s1" value="0.9">
+                        name="pf-s1" value="">
                 </div>
 
             </div>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pu-s1" value="0.1">
+                        name="pu-s1" value="">
                 </div>
 
             </div>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pf-s2" value="0.25">
+                        name="pf-s2" value="">
                 </div>
 
             </div>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-2">
                     <input type="text" inputmode="numeric" pattern="\d+\.?\d*" class="form-control" placeholder="0"
-                        name="pu-s2" value="0.75">
+                        name="pu-s2" value="">
                 </div>
             </div>
         </div>
@@ -245,11 +245,7 @@
                 <table class="table table-bordered">
                     <thead class="text-center table-dark">
                         <tr>
-                            <th colspan="2">Evidencias de máximo arrepentimiento</th>
-                        </tr>
-                        <tr>
-                            <th>Fórmula</th>
-                            <th>Resultados</th>
+                            <th>Evidencias de máximo arrepentimiento(Matrix de max Arrepentimiento * probabilidades</th>
                         </tr>
                     </thead>
                     <tbody id="evidences-max">

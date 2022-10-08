@@ -84,6 +84,12 @@ function drawTree(data) {
         { text: `Ev : ${data.evidencia_desfavorable[0].toFixed(2)}`, key: "43", color: "white", fig: "Ellipse" },
         { text: `Ev : ${data.evidencia_desfavorable[1].toFixed(2)}`, key: "44", color: "white", fig: "Ellipse" },
         { text: `Ev : ${data.evidencia_desfavorable[2].toFixed(2)}`, key: "45", color: "white", fig: "Ellipse" },
+        
+
+        { text: `Ev : ${data.evidencias[0].toFixed(2)}`, key: "46", color: "white", fig: "Ellipse" },
+        { text: `Ev : ${data.evidencias[1].toFixed(2)}`, key: "47", color: "white", fig: "Ellipse" },
+        { text: `Ev : ${data.evidencias[2].toFixed(2)}`, key: "48", color: "white", fig: "Ellipse" },
+
 
     ];
 var linkDataArray = [
@@ -98,7 +104,15 @@ var linkDataArray = [
         { from: "11", to: "15", text: "" },
         { from: "11", to: "16", text: "" },
         { from: "12", to: "17", text: "" },
-        { from: "12", to: "18", text: "" },
+    { from: "12", to: "18", text: "" },
+        
+    { from: "13", to: "46", text: "" },
+    { from: "14", to: "46", text: "" },
+    { from: "15", to: "47", text: "" },
+    { from: "16", to: "47", text: "" },
+    { from: "17", to: "48", text: "" },
+    { from: "18", to: "48", text: "" },
+
 
     // con estudio favorable
     { from: "2", to: "3", text: `Favorable \n${data.probabilidad_favorable.toFixed(2)}` },
@@ -141,6 +155,7 @@ var linkDataArray = [
     { from: "35", to: "44", text: "" },
     { from: "36", to: "45", text: "" },
     { from: "37", to: "45", text: "" },
+
 
     ];
 
