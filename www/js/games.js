@@ -38,18 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const getMaxFromColumn = (col, number, inputs) => {
-    let max = inputs[0][col].value;
+    let max = parseFloat(inputs[0][col].value);
     for (let i = 0; i < number; i++) {
-        if (inputs[i][col].value > max) max = inputs[i][col].value;
+        if (parseFloat(inputs[i][col].value) > max) max = parseFloat(inputs[i][col].value);
     }
 
     return max;
 }
 
 const getMinFromRow = (row, number, inputs) => {
-    let min = inputs[row][0].value;
+    let min = parseFloat(inputs[row][0].value);
+
     for (let i = 0; i < number; i++) {
-        if (inputs[row][0].value < min) min = inputs[row][0].value;
+        console.log(min, "vs", parseFloat(inputs[row][i].value));
+        if (parseFloat(inputs[row][i].value) < min) min = parseFloat(inputs[row][i].value);
     }
 
     return min;
